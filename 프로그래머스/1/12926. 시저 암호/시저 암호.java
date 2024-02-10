@@ -1,6 +1,6 @@
 class Solution {
     public String solution(String s, int n) {
-char[] answer = new char[s.length()];
+        char[] answer = new char[s.length()];
         for(int i = 0; i < s.length(); i++){
             char c = s.charAt(i);
             if(c == ' ') answer[i] = c;
