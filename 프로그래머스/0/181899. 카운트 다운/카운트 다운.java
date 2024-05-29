@@ -1,12 +1,13 @@
 import java.util.*;
 class Solution {
-    public int[] solution(int start, int end_num) {
-        int[] answer = new int[start-end_num+1];
-        for(int i = 0; i <= answer.length-1; i++){
-            int result = start-i;
-            answer[i] = result;
+    public int[] solution(int start, int end) {
+        int len = start - end + 1;
+        int[] answer = new int[len];
+        
+        for (int i = 0; i < len; i++) {
+            answer[i] = start--;
         }
-        System.out.println(Arrays.toString(answer));
+        
         return answer;
     }
 }
