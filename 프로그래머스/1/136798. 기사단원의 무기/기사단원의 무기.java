@@ -3,7 +3,16 @@ class Solution {
         int answer = 0;
         
         for (int i = 1; i <= number; i++) {
-            int divCount = divCount(i);
+            int divCount = 0;
+            for (int j = 1; j * j <= i; j++) {
+                if (i % j == 0) {
+                    if (j * j == i) {
+                        divCount++;
+                    } else {
+                        divCount += 2;
+                    }
+                }
+            }
             
             if (divCount > limit) {
                 answer += power;
@@ -13,19 +22,5 @@ class Solution {
         }
         
         return answer;
-    }
-    
-    private int divCount(int num) {
-        int count = 0;
-        for (int i = 1; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) {
-                if (i * i == num) {
-                    count++;
-                } else {
-                    count += 2;
-                }
-            }
-        }
-        return count;
     }
 }
